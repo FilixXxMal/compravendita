@@ -1,0 +1,18 @@
+<form [formGroup]="signup" (ngSubmit)="ngOnSubmit()">
+<table>
+  <tr>
+    <td>Email > </td>
+    <td><input [formControl]="this.signup.controls['email']"/></td>
+  </tr>
+  <tr>
+    <td>Username > </td>
+    <td><input [formControl]="signup.controls['nome']"/></td>
+  </tr>
+  <tr>
+    <td>Password > </td>
+    <td><input type="password" [formControl]="signup.controls['password']"/></td>
+  </tr>
+</table>
+<div *ngIf="!signup.valid" class="alert alert-danger">Campi non corretti</div>
+    <button class="btn btn-success btn-block" type="submit" [disabled]="!myForm.valid">Registrati</button>
+</form>
