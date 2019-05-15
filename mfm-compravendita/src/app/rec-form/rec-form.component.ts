@@ -1,6 +1,7 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { User } from './user';
+import { Users } from './mock-users';
 
 @Component({
   selector: 'app-rec-form',
@@ -9,13 +10,13 @@ import { User } from './user';
 })
 export class RecFormComponent implements OnInit {
   signup : FormGroup;
-  users: User[] = [];
+  users: User[] = Users;
 
   constructor(fb: FormBuilder) {
     this.signup = fb.group({
-      'nome': ['', Validators.required],
-      'email': ['', [Validators.required, Validators.email]],
-      'password': ['', Validators.required]
+      'nome': ['Nome', Validators.required],
+      'email': ['Email', [Validators.required, Validators.email]],
+      'password': ['Password', Validators.required]
     });
 
   }
