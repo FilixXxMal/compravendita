@@ -14,9 +14,9 @@ export class RecFormComponent implements OnInit {
 
   constructor(fb: FormBuilder) {
     this.signup = fb.group({
-      'nome': ['Nome', Validators.required],
-      'email': ['Email', [Validators.required, Validators.email]],
-      'password': ['Password', Validators.required]
+      'nome': ['', Validators.required],
+      'email': ['', [Validators.required, Validators.email]],
+      'password': ['', Validators.required]
     });
 
   }

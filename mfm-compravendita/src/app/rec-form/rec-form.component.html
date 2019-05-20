@@ -1,18 +1,18 @@
 <form [formGroup]="signup" (ngSubmit)="ngOnSubmit()">
 <table>
   <tr>
-    <td>Email > </td>
-    <td><input  name="email" onfocus="this.value=''" [formControl]="signup.controls['email']"/></td>
+    <td>Email</td>
+    <td><input  name="email" [formControl]="signup.controls['email']" class="col-sm-12"/></td>
   </tr>
   <tr>
-    <td>Username > </td>
-    <td><input name="nome" onfocus="this.value=''" [formControl]="signup.controls['nome']"/></td>
+    <td>Username</td>
+    <td><input name="nome" [formControl]="signup.controls['nome']" class="col-sm-12"/></td>
   </tr>
   <tr>
-    <td>Password > </td>
-    <td><input type="password"  onfocus="this.value=''" name="password" [formControl]="signup.controls['password']"/></td>
+    <td>Password</td>
+    <td><input type="password" name="password" [formControl]="signup.controls['password']" class="col-sm-12" style="float:right"/></td>
   </tr>
 </table>
 <div *ngIf="!signup.valid">Campi non corretti</div>
-    <button type="submit"  [disabled]="!myForm.valid">Registrati</button>
+    <button type="submit"  [disabled]="!signup.valid">Registrati</button>
 </form>
